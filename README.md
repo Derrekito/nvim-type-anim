@@ -28,8 +28,8 @@ return {
 ## Usage
 ### Commands
 - `:TypeAnim [file]` Starts the typing animation with the content of [file]. If [file] is omitted and the command is used in a Netrw buffer, it animates the file currently selected.
-- `:AnimToggle` Toggles the animation, pausing or resuming it.
-- `:AnimKill` Stops the animation and cleans up, restoring any original key mappings.
+- `:TypeAnimToggle` Toggles the animation, pausing or resuming it.
+- `:TypeAnimKill` Stops the animation and cleans up, restoring any original key mappings.
 
 ### Keybindings
 - `AnimToggleKey` The key used to toggle the animation. Default is <space>.

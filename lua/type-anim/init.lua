@@ -32,8 +32,8 @@ function TypeAnim.setup(opts)
     }
 
     -- Create user commands
-    vim.api.nvim_create_user_command('AnimToggle', TypeAnim.toggle_anim, {})
-    vim.api.nvim_create_user_command('AnimKill', TypeAnim.kill_anim, {})
+    vim.api.nvim_create_user_command('TypeAnimToggle', TypeAnim.toggle_anim, {})
+    vim.api.nvim_create_user_command('TypeAnimKill', TypeAnim.kill_anim, {})
 
     -- Set up key mappings
     if TypeAnim.toggle_anim then

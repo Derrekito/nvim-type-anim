@@ -1,4 +1,5 @@
 local TypeAnim = {}
+
 -- Global state for animation control
 TypeAnim.anim_state = {
     is_paused = false,
@@ -7,7 +8,6 @@ TypeAnim.anim_state = {
     put_char = nil,
     resume_state = nil
 }
-
 
 function TypeAnim.get_file_path()
     local current_file_dir = vim.fn.expand('%:p:h')  -- Directory of the current file
