@@ -26,12 +26,26 @@ return {
 ```
 
 ## Usage
-```lua
-require('type-anim').setup()
-```
-
 ### Commands
+- `:TypeAnim [file]` Starts the typing animation with the content of [file]. If [file] is omitted and the command is used in a Netrw buffer, it animates the file currently selected.
+- `:AnimToggle` Toggles the animation, pausing or resuming it.
+- `:AnimKill` Stops the animation and cleans up, restoring any original key mappings.
 
-`TypeAnim`
-`AnimToggle`
-`AnimKill`
+### Keybindings
+- `AnimToggleKey` The key used to toggle the animation. Default is <space>.
+- `AnimKillKey` The key used to stop the animation. Default is <C-c>.
+
+### Configuration
+You can customize the plugin's behavior by passing a configuration table to the setup function:
+
+```lua
+require("type-anim").setup({
+    AnimToggleKey = "<space>", -- Key to toggle the animation
+    AnimKillKey = "<C-c>"      -- Key to stop the animation
+})
+```
+## Contributing
+Contributions are welcome! Please feel free to submit a pull request or create an issue if you have ideas or find bugs.
+
+## License
+This plugin is released under the MIT License.
