@@ -139,6 +139,28 @@ end
 
 function TypeAnim.kill_anim()
     TypeAnim.anim_state.is_active = false
+    local opts = TypeAnim.keys
+
+    -- Restore the original key mappings if they exist, otherwise unbind
+    if opts.AnimToggleKey_orig then
+        vim.keymap.set("n", opts.AnimToggleKey, opts.AnimToggleKey_orig, { silent = true })
+    else
+        vim.keymap.del("n", opts.AnimToggleKey)
+        print("AnimToggleKey was unbound because the original mapping was not found.")
+    end
+
+    if opts.AnimKillKey_orig then
+        vim.keymap.set("n", opts.AnimKillKey, opts.AnimKillKey_orig, { silent = true })
+    else
+        vim.keymap.del("n", opts.AnimKillKey)
+        print("AnimKillKey was unbound because the original mapping was not found.")
+    end
+
+    -- Exit the buffer
+    local bufnr = vim.api.nvim_get_current_buf()
+    -- Switch to the previous buffer or fallback to a default view like 'Ex'
+    vim.cmd('buffer #')  -- Switch to the previous buffer
+    vim.cmd('bdelete ' .. bufnr)  -- Close the buffer used for animation
 end
 
 return TypeAnim
